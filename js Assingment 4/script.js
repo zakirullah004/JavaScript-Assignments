@@ -18,6 +18,8 @@ let images = ['imgs/image1.avif', 'imgs/image2.png', 'imgs/images3.jpg', 'imgs/i
 let imgLength = images.length;
 let x = 0;
 
+// change user pic 
+
 changePicbtn.addEventListener('click', function () {
     changeImg.src = images[x];
     x = x + 1;

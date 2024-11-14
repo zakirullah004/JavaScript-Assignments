@@ -86,3 +86,7 @@ let product = [
 ];
 
 // 1- Show all the products having color property using operator.
+
+let findProdut = product.filter(prd => prd.color !== undefined || 0);
+console.log(findProdut);
+

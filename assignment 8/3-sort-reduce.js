@@ -53,10 +53,30 @@ let products = [
 
 // 1- Add 16% tax on each product price and then offer 10% discount on price.
 
+// let originalPrice = products.map(p => p.price)
+// console.log("original price", originalPrice);
+
+// let pricewithTax = products.map(prds => prds.price += (prds.price / 100) * 16);
+// console.log("prices with tax", pricewithTax);
+
+// let pricewithDisc = pricewithTax.map(prds => prds -= (prds / 100) * 10);
+// console.log("prices with discount on tax", pricewithDisc);
 
 // 2- Show all the LED whose price is in the range of 30K to 40K.
 
+// let showLed = (products) => {
+//   let finalProducts = products.filter(prd => prd.price>=30000 && prd.price<=40000).map(prdTitle => prdTitle.title);
+//   console.log(finalProducts);
+// }
+// showLed(products);
 
 // 3- Find the sum of all products whose price is odd number using reduce function. 
+
+// let sumofProducts = (products) => {
+//   let oddPrice = products.filter(prdPrice => prdPrice.price%2 !== 0).map(p => p.price);
+//   let sum = oddPrice.reduce((pre,cur) => pre + cur)
+//   return sum
+// }
+// console.log(sumofProducts(products));
 
 

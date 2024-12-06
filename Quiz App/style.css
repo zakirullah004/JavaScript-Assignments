@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  /* background-color:#323232; */
+  /* color: aliceblue; */
+  height: 100vh;
+}
+#navbar {
+  background-color: lightblue;
+  padding: 5px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+#nav-logo {
+  margin-right: auto;
+  margin-left: 10px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+#navbar #SelectVariant {
+  margin-right: auto;
+}
+.main-card {
+  background-color: rgb(43, 179, 200);
+  width: 450px;
+  margin: 0 auto;
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: #323232;
+  position: relative;
+  /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); */
+  margin-top: 10px;
+}
+button {
+  padding: 10px 14px;
+  border-radius: 7px;
+  border: none;
+  font-weight: bold;
+  font-family: "Poppins";
+  box-shadow: 2px 3px 8px black;
+  transition: all 0.2s;
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+  }
+  /* &:active{
+    } */
+}
+
+select {
+  padding: 10px 10px;
+  border-radius: 7px;
+  border: none;
+  font-weight: bold;
+  font-family: "Poppins";
+  background-color: rgb(43, 179, 200);
+}
+
+select option {
+  all: unset;
+  background: #f2f2f2;
+  color: #323232;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+.color-none {
+  background: none;
+}
+
+#Watch-img {
+  height: 350px;
+  width: 100%;
+  border-radius: 10px;
+  border: 3px solid rgba(27, 117, 147, 0.926);
+  background: white;
+}
+
+#close-icon {
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.alert-box {
+  display: none;
+}
+
+.show-alert {
+  height: 30px;
+  background-color: rgba(246, 9, 9, 0.875);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 20px 5px;
+  color: rgb(227, 197, 197);
+  font-style: italic;
+  animation: alertbx 1s linear;
+  position: absolute;
+  width: 100%;
+  top: 13%;
+  z-index: 111;
+}
+@keyframes alertbx {
+  0% {
+    top: 0;
+  }
+  10% {
+    top: 13%;
+  }
+  20% {
+    top: 7%;
+  }
+  30% {
+    top: 13%;
+  }
+  40% {
+    top: 7%;
+  }
+  50% {
+    top: 13%;
+  }
+  100% {
+    top: 13%;
+  }
+}
+
+#alt-img:hover {
+  cursor: pointer;
+}
+
+/* card styling  */
+
+.card-title {
+  /* background-color:rgb(0, 34, 128) ; */
+  color: rgb(48, 49, 50);
+  width: fit-content;
+  padding: 0px 5px;
+  border-radius: 5px;
+  margin-bottom: 2px;
+}
+.card-price {
+  color: rgb(0, 34, 128);
+}
+.card-caption {
+  background-color: rgba(27, 117, 147, 0.926);
+  color: #f2f2f2;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: justify;
+  &::selection {
+    background-color: yellow;
+    color: #323232;
+  }
+}
+
+/* ------------------------------ */
+#all-products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+  padding-bottom: 10px;
+}
+#all-products img {
+  border-radius: 10px;
+  /* border: 3px solid #323232; */
+  background-color: white;
+  box-shadow: 2px 3px 10px black;
+  transition: all 0.2s ease-out;
+  &:hover {
+    transform: translateY(-3px);
+    cursor: pointer;
+  }
+}
+#all-products h1 {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #323232;
+  background-color: #f2f2f2;
+}
+
+#mainHero {
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content:stretch;  */
+  gap: 0.6rem;
+  /* padding: 10px 0px; */
+  /* background-color:rgb(110, 207, 240); */
+  background: rgb(110, 207, 240);
+  border-radius: 8px;
+}
+#mainHero h3 {
+  color: rgb(0, 34, 128);
+  padding-bottom: 3px;
+}
+/* ------------------------------ */
+
+@media screen and (max-width: 500px) {
+  #nav-logo {
+    margin-right: 0;
+    margin-left: 0;
+    text-align: center;
+  }
+  #navbar #SelectVariant {
+    margin-right: 0;
+  }
+  .main-card {
+    width: 350px;
+  }
+  .card-title {
+    font-size: 23px;
+  }
+  #Watch-img {
+    height: 250px;
+  }
+  #navbar {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+    /* justify-content: center; */
+    padding: 10px;
+  }
+  button,
+  select {
+    padding: 5px;
+  }
+  #close-icon {
+    top: 15px;
+  }
+}
+@media screen and (max-width: 350px) {
+  #navbar {
+    gap: 0.5rem;
+  }
+  .main-card {
+    width: 300px;
+    padding: 5px;
+  }
+  #Watch-img {
+    height: 230px;
+  }
+  .card-caption {
+    text-align: left;
+  }
+  button,
+  select {
+    padding: 5px;
+  }
+  #close-icon {
+    top: 12px;
+  }
+}

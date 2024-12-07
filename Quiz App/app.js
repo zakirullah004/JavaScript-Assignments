@@ -112,16 +112,3 @@ loginForm.addEventListener('submit', function (e) {
 
     }
 });
-
-
-//! ------------------------------------
-//? ***** QUIZ SECTION
-
-//! ------------------------------------
-
-
-// loginBtnLink.addEventListener('click',function(e){
-//     e.preventDefault()
-//     console.log("btn clicked");
-//     console.log(window.location.href);
-// })

@@ -250,20 +250,22 @@ var jsQuiz = [
 ];
 
 let getquizName = localStorage.getItem('Quiz');
-let quizName ;
-let title = document.getElementById('Title').textContent = getquizName
+let quizName;
 
-if(getquizName == "Html"){
+if (getquizName == "Html") {
     quizName = htmlQuiz;
-}else if(getquizName == "Css"){
+} else if (getquizName == "Css") {
     quizName = CssQuiz;
 }
-else if(getquizName == "JavaScript"){
+else if (getquizName == "JavaScript") {
     quizName = jsQuiz;
 }
 
 let userName = localStorage.getItem('userName');
 let navUser = document.getElementById('user').textContent = userName;
+
+let getQuizName = localStorage.getItem("Quiz");
+let pageTitle = document.getElementById("Title").textContent = `${getQuizName} | Quiz`
 
 let questionContainer = document.getElementById('questions_container');
 
@@ -295,70 +297,70 @@ let wrongAns = document.getElementById('wrongAns')
 let questionCounter = 0
 let score = 0;
 
-function QuizHere(){
+function QuizHere() {
     function renderQuestion() {
         // console.log(quizName[questionCounter].question);
         question.innerHTML = quizName[questionCounter].question
-    
+
         label1.innerHTML = quizName[questionCounter].option1
         label2.innerHTML = quizName[questionCounter].option2
         label3.innerHTML = quizName[questionCounter].option3
         label4.innerHTML = quizName[questionCounter].option4
-    
+
         option1.value = quizName[questionCounter].option1;
         option2.value = quizName[questionCounter].option2;
         option3.value = quizName[questionCounter].option3;
         option4.value = quizName[questionCounter].option4;
-    
+
     }
 
     function disSeletOption() {
         for (let i = 0; i < quizOptions.length; i++) {
             quizOptions[i].checked = false;
-            if(quizOptions[i].parentElement.classList.contains('list-group-item','active')){
-                quizOptions[i].parentElement.classList.remove('list-group-item','active')
+            if (quizOptions[i].parentElement.classList.contains('list-group-item', 'active')) {
+                quizOptions[i].parentElement.classList.remove('list-group-item', 'active')
             }
-    
+
         }
     }
-    
+
     for (let i = 0; i < quizOptions.length; i++) {
-        quizOptions[i].addEventListener('change',function(e){
-            for(let j = 0; j < quizOptions.length; j++){
-                quizOptions[j].parentElement.classList.remove('list-group-item','active')
+        quizOptions[i].addEventListener('change', function (e) {
+            for (let j = 0; j < quizOptions.length; j++) {
+                quizOptions[j].parentElement.classList.remove('list-group-item', 'active')
             }
-            if(quizOptions[i].checked){
+            if (quizOptions[i].checked) {
                 quizOptions[i].parentElement.style.backgroundColor = "none";
-                e.target.parentElement.classList.add('list-group-item','active');
+                e.target.parentElement.classList.add('list-group-item', 'active');
             }
         });
     }
 
-    nextQuestion.addEventListener('click',function(){
+    nextQuestion.addEventListener('click', function () {
         let isRadioChecked = false;
         for (let i = 0; i < quizOptions.length; i++) {
             if (quizOptions[i].checked) {
                 isRadioChecked = true
                 console.log(quizOptions[i].value);
-                if(quizOptions[i].value == quizName[questionCounter].answer){
+                if (quizOptions[i].value == quizName[questionCounter].answer) {
                     score++
                 }
-            } 
+            }
         }
-    
-        if(!isRadioChecked){
+
+        if (!isRadioChecked) {
             // console.log("Please Select option");
             Swal.fire({
                 title: "No Option Selected!",
                 text: "Please Select an Option",
                 icon: "error"
-              });
-        }else {
-            if (questionCounter < htmlQuiz.length - 1) {
+            });
+        } else {
+            if (questionCounter < quizName.length - 1) {
                 questionCounter++
                 renderQuestion();
                 disSeletOption();
-            }else{
+            } else {
                 showResult()
             }
         }
@@ -368,12 +370,12 @@ function QuizHere(){
         questionContainer.style.display = "none";
         resultWindow.classList.remove('show-result-screen')
         let per = Math.round(score / quizName.length * 100);
-        
-        if(per < 70){
+
+        if (per < 70) {
             announcement.textContent = "You Failed! Better Luck Next Time"
             announcement.classList.add('red-text')
             percentageShow.classList.add('red-per')
-        } else{
+        } else {
             announcement.textContent = "Congatulations! You Passed the Exam"
             announcement.classList.add('green-text')
             percentageShow.classList.add('green-per')
@@ -383,9 +385,11 @@ function QuizHere(){
         wrongAns.textContent = quizName.length - score;
         percentageShow.textContent = `${per}%`;
 
-        goHome.addEventListener('click',function(){
-        location.assign(`${getquizName}.html`);
-        resultWindow.classList.add('show-result-screen')
+        goHome.addEventListener('click', function () {
+            location.assign("mianquizpage.html");
+            console.log("go to home page");
+            // location.assign(`${getquizName}.html`);
+            resultWindow.classList.add('show-result-screen')
         })
     }
     renderQuestion();

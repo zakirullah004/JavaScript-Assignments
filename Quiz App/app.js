@@ -112,3 +112,38 @@ loginForm.addEventListener('submit', function (e) {
 
     }
 });
+
+
+//! Doing Change Theme Functionallity
+
+let body = document.getElementById('body');
+
+function lightBg(){
+    localStorage.setItem('bg',"light-bg")
+    applyTheme()
+}
+function darkBg(){
+    localStorage.setItem('bg',"dark-bg")
+    applyTheme()
+}
+
+function applyTheme(){
+    let themeColour = localStorage.getItem('bg')
+    if(themeColour == "light-bg"){
+        body.className = "light-bg"
+    }else{
+        body.className = "dark-bg"
+    }
+}
+
+function setByDefault() {
+    var checkModeState = localStorage.getItem("bg");
+    if (checkModeState === null) {
+      localStorage.setItem("bg" , "light");
+      applyTheme();
+    } else {
+      applyTheme();
+    }
+  }
+
+window.onload = setByDefault();

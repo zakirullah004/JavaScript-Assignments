@@ -260,6 +260,39 @@ li{
     font-weight:500;
 }
 
+/*! ------------------------------------ */
+
+/*? theme functionallity */
+
+.theme-btns{
+    padding: 5px 10px;
+    border: none;
+}
+#dark-bg{
+    background-color: #323232;
+    color: white;
+}
+#light-bg{
+    background-color:white;
+}
+
+.light-bg{
+    background-color: white;
+    color: black;
+}
+.dark-bg{
+    background-color: #323232;
+    color: #f2f2f2;
+}
+
+.lightp{
+    color: #c0bcbc !important;
+}
+
+#signupForm,#loginForm{
+    color: black;
+}
+
 @media screen and (max-width:700px) {
     .design-form{
         width: 300px;

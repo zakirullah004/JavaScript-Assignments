@@ -117,6 +117,8 @@ loginForm.addEventListener('submit', function (e) {
 //! Doing Change Theme Functionallity
 
 let body = document.getElementById('body');
+let pText = document.getElementById('introText')
+
 
 function lightBg(){
     localStorage.setItem('bg',"light-bg")
@@ -131,10 +133,13 @@ function applyTheme(){
     let themeColour = localStorage.getItem('bg')
     if(themeColour == "light-bg"){
         body.className = "light-bg"
+        pText.classList.remove("lightp");
     }else{
-        body.className = "dark-bg"
+        body.className = "dark-bg";
+        pText.classList.add("lightp");
     }
 }
+
 
 function setByDefault() {
     var checkModeState = localStorage.getItem("bg");

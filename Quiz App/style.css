@@ -78,7 +78,8 @@
 .design-form{
     border: 2px solid grey;
     border-radius: 6px;
-    background-color:#dddbdb;
+    background-color:#323232;
+    color:#5cb9ff !important;
     width: 500px;
     margin-top: 20px;
     margin: 0 auto;
@@ -88,6 +89,14 @@
     transform: translate(-50%,-50%);
 
 }
+.design-form img{
+    background-color: #5cb9ff;
+    padding: 5px 3px;
+    border-radius: 4px;
+    height: auto; 
+    width:30px;
+}
+
 .design-form .form-title{
     display: flex;
     justify-content:space-around;
@@ -106,6 +115,18 @@
     /* text-align: center; */
 }
 
+.dark-form{
+    background-color:#5cb9ff;
+    padding:20px;
+    color: #323232 !important;
+}
+.dark-form img{
+    background-color: white;
+    padding: 5px 3px;
+    border-radius: 4px;
+    height: auto; 
+    width:30px;
+}
 
 
 /*! quiz section Start  */

@@ -134,9 +134,13 @@ function applyTheme(){
     if(themeColour == "light-bg"){
         body.className = "light-bg"
         pText.classList.remove("lightp");
+        loginForm.classList.remove("dark-form")
+        signupForm.classList.remove("dark-form")
     }else{
         body.className = "dark-bg";
         pText.classList.add("lightp");
+        loginForm.classList.add("dark-form")
+        signupForm.classList.add("dark-form")
     }
 }
 

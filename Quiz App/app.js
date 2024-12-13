@@ -153,6 +153,6 @@ function setByDefault() {
     } else {
       applyTheme();
     }
-  }
+}
 
 window.onload = setByDefault();

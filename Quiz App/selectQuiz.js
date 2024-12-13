@@ -26,7 +26,55 @@ for(let i=0; i<quizSelect.length; i++){
     })
 }
 
+
+//! Dark Theme Style -------------------------------------
+
+let body = document.getElementById('body');
+let cards = document.querySelectorAll('.quiz-card');
+
+
+function lightBg(){
+    localStorage.setItem('bg',"light-bg")
+    applyTheme()
+}
+function darkBg(){
+    localStorage.setItem('bg',"dark-bg")
+    applyTheme()
+}
+
+function applyTheme(){
+    let themeColour = localStorage.getItem('bg')
+    if(themeColour == "light-bg"){
+        body.className = "light-bg"
+        welcomeUser.style.color = "#054270";
+        cards.forEach(function (e){
+            e.classList.remove("blue-card")
+        });
+    }else{
+        body.className = "dark-bg";
+        welcomeUser.style.color = "#f2f2f2f2";
+        cards.forEach(function (e){
+            e.style.color = "#323232"
+            e.classList.add("blue-card")
+        });
+    }
+}
+
+
+function setByDefault() {
+    var checkModeState = localStorage.getItem("bg");
+    if (checkModeState === null) {
+      localStorage.setItem("bg" , "light");
+      applyTheme();
+    } else {
+        applyTheme();
+    }
+}
+
+
 let logoutBtn = document.getElementById('logoutBtn');
 logoutBtn.addEventListener('click',function(){
     location.assign("index.html")
-})
+});
+
+window.onload = setByDefault();

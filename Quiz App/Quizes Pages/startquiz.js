@@ -34,6 +34,8 @@ function applyTheme(){
     let themeColour = localStorage.getItem('bg')
     if(themeColour == "light-bg"){
         body.className = "light-bg"
+        quizName.style.color = "#054270"
+
     }else{
         body.className = "dark-bg";
         quizName.style.color = "#f2f2f2"

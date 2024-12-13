@@ -24,62 +24,62 @@ var htmlQuiz = [
         option4: "&lt;href&gt;",
         answer: "&lt;a&gt;",
     },
-    // {
-    //     question: "What is the correct tag for inserting a line break?",
-    //     option1: "&lt;br&gt;",
-    //     option2: "&lt;lb&gt;",
-    //     option3: "&lt;break&gt;",
-    //     option4: "&lt;newline&gt;",
-    //     answer: "&lt;br&gt;",
-    // },
-    // {
-    //     question: "Which tag is used to insert an image in HTML?",
-    //     option1: "&lt;image&gt;",
-    //     option2: "&lt;img&gt;",
-    //     option3: "&lt;pic&gt;",
-    //     option4: "&lt;src&gt;",
-    //     answer: "&lt;img&gt;",
-    // },
-    // {
-    //     question: "What is the correct tag for a numbered list?",
-    //     option1: "&lt;ul&gt;",
-    //     option2: "&lt;list&gt;",
-    //     option3: "&lt;ol&gt;",
-    //     option4: "&lt;li&gt;",
-    //     answer: "&lt;ol&gt;",
-    // },
-    // {
-    //     question: "How do you create an unordered list?",
-    //     option1: "&lt;ul&gt;",
-    //     option2: "&lt;list&gt;",
-    //     option3: "&lt;li&gt;",
-    //     option4: "&lt;ol&gt;",
-    //     answer: "&lt;ul&gt;",
-    // },
-    // {
-    //     question: "What does the &lt;title&gt; tag define?",
-    //     option1: "The page title shown in the browser tab",
-    //     option2: "A heading",
-    //     option3: "A hyperlink",
-    //     option4: "An image caption",
-    //     answer: "The page title shown in the browser tab",
-    // },
-    // {
-    //     question: "Which tag is used to define a table in HTML?",
-    //     option1: "&lt;table&gt;",
-    //     option2: "&lt;tbl&gt;",
-    //     option3: "&lt;td&gt;",
-    //     option4: "&lt;tr&gt;",
-    //     answer: "&lt;table&gt;",
-    // },
-    // {
-    //     question: "What is the correct tag for a paragraph in HTML?",
-    //     option1: "&lt;p&gt;",
-    //     option2: "&lt;para&gt;",
-    //     option3: "&lt;pg&gt;",
-    //     option4: "&lt;text&gt;",
-    //     answer: "&lt;p&gt;",
-    // },
+    {
+        question: "What is the correct tag for inserting a line break?",
+        option1: "&lt;br&gt;",
+        option2: "&lt;lb&gt;",
+        option3: "&lt;break&gt;",
+        option4: "&lt;newline&gt;",
+        answer: "&lt;br&gt;",
+    },
+    {
+        question: "Which tag is used to insert an image in HTML?",
+        option1: "&lt;image&gt;",
+        option2: "&lt;img&gt;",
+        option3: "&lt;pic&gt;",
+        option4: "&lt;src&gt;",
+        answer: "&lt;img&gt;",
+    },
+    {
+        question: "What is the correct tag for a numbered list?",
+        option1: "&lt;ul&gt;",
+        option2: "&lt;list&gt;",
+        option3: "&lt;ol&gt;",
+        option4: "&lt;li&gt;",
+        answer: "&lt;ol&gt;",
+    },
+    {
+        question: "How do you create an unordered list?",
+        option1: "&lt;ul&gt;",
+        option2: "&lt;list&gt;",
+        option3: "&lt;li&gt;",
+        option4: "&lt;ol&gt;",
+        answer: "&lt;ul&gt;",
+    },
+    {
+        question: "What does the &lt;title&gt; tag define?",
+        option1: "The page title shown in the browser tab",
+        option2: "A heading",
+        option3: "A hyperlink",
+        option4: "An image caption",
+        answer: "The page title shown in the browser tab",
+    },
+    {
+        question: "Which tag is used to define a table in HTML?",
+        option1: "&lt;table&gt;",
+        option2: "&lt;tbl&gt;",
+        option3: "&lt;td&gt;",
+        option4: "&lt;tr&gt;",
+        answer: "&lt;table&gt;",
+    },
+    {
+        question: "What is the correct tag for a paragraph in HTML?",
+        option1: "&lt;p&gt;",
+        option2: "&lt;para&gt;",
+        option3: "&lt;pg&gt;",
+        option4: "&lt;text&gt;",
+        answer: "&lt;p&gt;",
+    },
 ];
 
 
@@ -287,7 +287,7 @@ let goHome = document.getElementById('GoHome');
 
 
 //! Result Window 
-let resultWindow = document.getElementById('show/hide_result');
+let resultWindow = document.getElementById('showhide_result');
 let announcement = document.getElementById('announcement')
 let percentageShow = document.getElementById('percentage')
 let totalQues = document.getElementById('totalQue')
@@ -296,6 +296,8 @@ let wrongAns = document.getElementById('wrongAns')
 
 let questionCounter = 0
 let score = 0;
+
+let setResultData;
 
 function QuizHere() {
     function renderQuestion() {
@@ -385,12 +387,23 @@ function QuizHere() {
         wrongAns.textContent = quizName.length - score;
         percentageShow.textContent = `${per}%`;
 
+        setResultData = {
+            quizName : getquizName,
+            quizlength : quizName.length,
+            score : score,
+            perc : per,
+        }
+
+        localStorage.setItem("setResult",JSON.stringify(setResultData))
+
         goHome.addEventListener('click', function () {
             location.assign("mianquizpage.html");
             console.log("go to home page");
             // location.assign(`${getquizName}.html`);
             resultWindow.classList.add('show-result-screen')
-        })
+        });
+
+        console.log(setResultData);
     }
     renderQuestion();
 }

@@ -71,10 +71,9 @@ function setByDefault() {
     }
 }
 
+window.onload = setByDefault();
 
 let logoutBtn = document.getElementById('logoutBtn');
 logoutBtn.addEventListener('click',function(){
     location.assign("index.html")
 });
-
-window.onload = setByDefault();

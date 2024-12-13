@@ -1,11 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Result Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css" />
 </head>
-<body>
-    <h2>Welcome to Result page</h2>
+<style>
+    #result-screen{
+        background-color:#5cb9ff;
+        padding: 15px 20px;
+        width: 500px;
+        min-width:300px;
+    }
+    .result-screen table tr:not(thead tr) {
+        color: #323232;
+        font-weight: 500;
+    }
+    #quizName{
+        color:#054270;
+        font-weight:800;
+    }
+    #note{
+        display: grid;
+        place-items: center;
+        margin-top: 50px;
+    }
+    #GoHome1{
+        position:absolute;
+        top: 80px;
+        left: 20px;
+    }
+</style>
+
+<body id="body">
+
+    <header>
+        <div class="navbar">
+            <div id="nav-logo" class="nav-logo">
+                <h3>EraSoft</h3>
+            </div>
+
+            <div class="Theme">
+                <button class="theme-btns" onclick="lightBg()" id="light-bg"><i class="fa-solid fa-sun"></i></button>
+                <button class="theme-btns" onclick="darkBg()" id="dark-bg"><i class="fa-solid fa-moon"></i></button>
+            </div>
+
+            <div class="logout">
+                <h4 id="user"></h4><i class="fa-solid fa-right-from-bracket" id="logoutBtn"></i>
+            </div>
+        </div>
+    </header>
+
+    <h1 id="note"></h1>
+
+    <div class="container show-result-screen" id="showhide_result">
+        <div class="result-screen" id="result-screen">
+            <h2 id="quizName"></h2>
+            <h2 id="announcement"></h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2" style="color:black">Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Total Questions</td>
+                        <td id="totalQue" style="font-weight: bold"></td>
+                    </tr>
+                    <tr>
+                        <td>Correct Question</td>
+                        <td id="passQue" style="color: rgb(14, 208, 14); font-weight: bold"></td>
+                    </tr>
+                    <tr>
+                        <td>Wrong Answers</td>
+                        <td id="wrongAns" style="color: red; font-weight: bold"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 id="percentage"></h3>
+        </div>
+    </div>
+    <a href="../selectQuiz.html" class="btn btn-primary" id="GoHome1" >Go Back to Home</a>
+
+    <script src="result.js"></script>
 </body>
+
 </html>

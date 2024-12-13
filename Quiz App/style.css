@@ -33,6 +33,23 @@
     gap: 1rem;
     padding-right: 20px;
 }
+.result-nav{
+    margin-left: auto;
+}
+.result-nav a{
+    text-decoration: none;
+    color: #5cb9ff;
+    background-color:#323232;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight:500;
+    border: none;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+
 /*! Hero sextion */
 .hero-section{
     max-width: 1200px;
@@ -279,16 +296,11 @@ li{
     font-weight:500;
 }
 
+
 /*! ------------------------------------ */
 
 /*? theme functionallity */
 
-
-/* .Theme{
-    display: flex;
-    background-color:#323232;
-    gap: 0.4rem;
-} */
 .theme-btns{
     padding: 0px 6px;
     border: none;
@@ -322,9 +334,15 @@ li{
 }
 
 @media screen and (max-width:700px) {
+    .navbar{
+        padding:10px;
+        vertical-align: middle;
+        display: flex;
+        align-items: center;
+        justify-content:center;
+    }
     .design-form{
         width: 320px;
-        /* background-color: #f2f2f2; */
     }  
     .hero-section h1{
         color: #0987e8;
@@ -387,6 +405,18 @@ li{
     }
     .logout i{
         top:-4px;
+    }
+    .Theme{
+        vertical-align: middle;
+    }
+    .theme-btns{
+        margin-bottom:8px;
+    }
+    #dark-bg{
+        font-size:20px;
+    }
+    #light-bg{
+        font-size:20px;
     }
 
 }

@@ -7,6 +7,14 @@
 .navbar{
     background-color: #5cb9ff;
     padding:10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+.navbar .Theme{
+    margin-left:auto;
+    margin-right: 20px;
+    margin-bottom: 0px;
 }
 .nav-logo{
     color:#323463;
@@ -89,13 +97,6 @@
     transform: translate(-50%,-50%);
 
 }
-.design-form img{
-    background-color: #5cb9ff;
-    padding: 5px 3px;
-    border-radius: 4px;
-    height: auto; 
-    width:30px;
-}
 
 .design-form .form-title{
     display: flex;
@@ -105,7 +106,7 @@
 }
 .form-title img{
     position:absolute;
-    right: 20px;
+    right: 30px;
     &:hover{
         cursor:pointer;
    }
@@ -120,13 +121,7 @@
     padding:20px;
     color: #323232 !important;
 }
-.dark-form img{
-    background-color: white;
-    padding: 5px 3px;
-    border-radius: 4px;
-    height: auto; 
-    width:30px;
-}
+
 
 
 /*! quiz section Start  */
@@ -280,7 +275,7 @@ li{
     padding: 8px;
 }
 .result-screen table tr:not(thead tr){
-    color: #084676;
+    color: #5cb9ff;
     font-weight:500;
 }
 
@@ -288,16 +283,25 @@ li{
 
 /*? theme functionallity */
 
+
+/* .Theme{
+    display: flex;
+    background-color:#323232;
+    gap: 0.4rem;
+} */
 .theme-btns{
-    padding: 5px 10px;
+    padding: 0px 6px;
     border: none;
 }
 #dark-bg{
-    background-color: #323232;
-    color: white;
+    background:#323232;
+    color: #f2f2f2;
+    font-size:24px;
 }
 #light-bg{
-    background-color:white;
+    background:#f2f2f2;
+    color: #323232;;
+    font-size:24px;
 }
 
 .light-bg{
@@ -319,8 +323,8 @@ li{
 
 @media screen and (max-width:700px) {
     .design-form{
-        width: 300px;
-        background-color: #f2f2f2;
+        width: 320px;
+        /* background-color: #f2f2f2; */
     }  
     .hero-section h1{
         color: #0987e8;
@@ -347,7 +351,7 @@ li{
     }
     .form-title img{
         position:absolute;
-        top:27px;
+        right:30px;
     }
 
     #userWelcome{
@@ -366,6 +370,9 @@ li{
         margin-top: 30px;
         font-weight:400;
         font-size: 30px;
+    }
+    #questions_container{
+        margin-top:40px !important;
     }
     .result-screen{
         display: flex;

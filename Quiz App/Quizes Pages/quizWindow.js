@@ -24,62 +24,62 @@ var htmlQuiz = [
         option4: "&lt;href&gt;",
         answer: "&lt;a&gt;",
     },
-    {
-        question: "What is the correct tag for inserting a line break?",
-        option1: "&lt;br&gt;",
-        option2: "&lt;lb&gt;",
-        option3: "&lt;break&gt;",
-        option4: "&lt;newline&gt;",
-        answer: "&lt;br&gt;",
-    },
-    {
-        question: "Which tag is used to insert an image in HTML?",
-        option1: "&lt;image&gt;",
-        option2: "&lt;img&gt;",
-        option3: "&lt;pic&gt;",
-        option4: "&lt;src&gt;",
-        answer: "&lt;img&gt;",
-    },
-    {
-        question: "What is the correct tag for a numbered list?",
-        option1: "&lt;ul&gt;",
-        option2: "&lt;list&gt;",
-        option3: "&lt;ol&gt;",
-        option4: "&lt;li&gt;",
-        answer: "&lt;ol&gt;",
-    },
-    {
-        question: "How do you create an unordered list?",
-        option1: "&lt;ul&gt;",
-        option2: "&lt;list&gt;",
-        option3: "&lt;li&gt;",
-        option4: "&lt;ol&gt;",
-        answer: "&lt;ul&gt;",
-    },
-    {
-        question: "What does the &lt;title&gt; tag define?",
-        option1: "The page title shown in the browser tab",
-        option2: "A heading",
-        option3: "A hyperlink",
-        option4: "An image caption",
-        answer: "The page title shown in the browser tab",
-    },
-    {
-        question: "Which tag is used to define a table in HTML?",
-        option1: "&lt;table&gt;",
-        option2: "&lt;tbl&gt;",
-        option3: "&lt;td&gt;",
-        option4: "&lt;tr&gt;",
-        answer: "&lt;table&gt;",
-    },
-    {
-        question: "What is the correct tag for a paragraph in HTML?",
-        option1: "&lt;p&gt;",
-        option2: "&lt;para&gt;",
-        option3: "&lt;pg&gt;",
-        option4: "&lt;text&gt;",
-        answer: "&lt;p&gt;",
-    },
+    // {
+    //     question: "What is the correct tag for inserting a line break?",
+    //     option1: "&lt;br&gt;",
+    //     option2: "&lt;lb&gt;",
+    //     option3: "&lt;break&gt;",
+    //     option4: "&lt;newline&gt;",
+    //     answer: "&lt;br&gt;",
+    // },
+    // {
+    //     question: "Which tag is used to insert an image in HTML?",
+    //     option1: "&lt;image&gt;",
+    //     option2: "&lt;img&gt;",
+    //     option3: "&lt;pic&gt;",
+    //     option4: "&lt;src&gt;",
+    //     answer: "&lt;img&gt;",
+    // },
+    // {
+    //     question: "What is the correct tag for a numbered list?",
+    //     option1: "&lt;ul&gt;",
+    //     option2: "&lt;list&gt;",
+    //     option3: "&lt;ol&gt;",
+    //     option4: "&lt;li&gt;",
+    //     answer: "&lt;ol&gt;",
+    // },
+    // {
+    //     question: "How do you create an unordered list?",
+    //     option1: "&lt;ul&gt;",
+    //     option2: "&lt;list&gt;",
+    //     option3: "&lt;li&gt;",
+    //     option4: "&lt;ol&gt;",
+    //     answer: "&lt;ul&gt;",
+    // },
+    // {
+    //     question: "What does the &lt;title&gt; tag define?",
+    //     option1: "The page title shown in the browser tab",
+    //     option2: "A heading",
+    //     option3: "A hyperlink",
+    //     option4: "An image caption",
+    //     answer: "The page title shown in the browser tab",
+    // },
+    // {
+    //     question: "Which tag is used to define a table in HTML?",
+    //     option1: "&lt;table&gt;",
+    //     option2: "&lt;tbl&gt;",
+    //     option3: "&lt;td&gt;",
+    //     option4: "&lt;tr&gt;",
+    //     answer: "&lt;table&gt;",
+    // },
+    // {
+    //     question: "What is the correct tag for a paragraph in HTML?",
+    //     option1: "&lt;p&gt;",
+    //     option2: "&lt;para&gt;",
+    //     option3: "&lt;pg&gt;",
+    //     option4: "&lt;text&gt;",
+    //     answer: "&lt;p&gt;",
+    // },
 ];
 
 
@@ -395,4 +395,46 @@ function QuizHere() {
     renderQuestion();
 }
 
-window.onload = QuizHere();
+//! Dark Theme Style -------------------------------------
+
+let body = document.getElementById('body');
+let labelText = document.querySelectorAll('label')
+
+function lightBg(){
+    localStorage.setItem('bg',"light-bg")
+    applyTheme()
+}
+function darkBg(){
+    localStorage.setItem('bg',"dark-bg")
+    applyTheme()
+}
+
+function applyTheme(){
+    let themeColour = localStorage.getItem('bg')
+    if(themeColour == "light-bg"){
+        body.className = "light-bg";
+        question.style.backgroundColor = "rgb(226, 224, 229)"
+    }else{
+        body.className = "dark-bg";
+        question.style.color = "#323232"
+        question.style.backgroundColor = "#5cb9ff"
+        labelText.forEach(function(e){
+            e.style.color = "black"
+        })
+    }
+}
+
+function setByDefault() {
+    QuizHere();
+    var checkModeState = localStorage.getItem("bg");
+    if (checkModeState === null) {
+      localStorage.setItem("bg" , "light");
+      applyTheme();
+    } else {
+        applyTheme();
+    }
+}
+
+
+window.onload = setByDefault()
+// window.onload = QuizHere();

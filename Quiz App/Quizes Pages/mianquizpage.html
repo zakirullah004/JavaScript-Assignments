@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 
-<body>
+<body id="body">
 
     <header>
         <div class="navbar">
@@ -22,18 +22,23 @@
             <h3>EraSoft</h3>
           </div>
   
+          <div class="Theme" style="margin-left: auto; margin-right:20px;">
+            <button class="theme-btns" onclick="lightBg()" id="light-bg"><i class="fa-solid fa-sun"></i></button>
+            <button class="theme-btns" onclick="darkBg()" id="dark-bg"><i class="fa-solid fa-moon"></i></button>
+          </div>
+
           <div class="logout">
             <h4 id="user"></h4><i class="fa-solid fa-right-from-bracket" id="logoutBtn"></i>
           </div>
         </div>
       </header>
 
-    <div class="container">
+    <div class="container mt-5">
         <h1 id="quizName" class="hero-title"></h1>
         <div class="h-ruler"></div>
     </div>
 
-    <div class="container" style="margin-top: 60px;">
+    <div class="container" style="margin-top: 40px;">
         <div class="accordion" id="accordionFlushExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingOne">

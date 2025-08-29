@@ -93,3 +93,88 @@
 // let newNum = num.toString();
 // console.log(newNum.replaceAll(".",""));
 // console.log(typeof newNum);
+
+
+
+//! ***********  Chapter 26 to 30   ******************
+
+// question 1
+// let num = Math.abs(Number(prompt("Enter decimal Number:")));
+// console.log("Number:",num);
+// console.log("Round off:",Math.round(num));
+// console.log("Floor Value:",Math.floor(num));
+// console.log("Ceil Value:",Math.ceil(num));
+
+
+// question 2
+// let negNum = -Number(prompt("Enter decimal Number:"));
+// console.log("Number:",negNum);
+// console.log("Round off:",Math.round(negNum));
+// console.log("Floor Value:",Math.floor(negNum));
+// console.log("Ceil Value:",Math.ceil(negNum));
+
+
+// question 3
+
+// let val = -45;
+// let absVal = Math.abs(val)
+// console.log("Value",val);
+// console.log("Absolute Value",absVal);
+
+
+
+// question 4
+
+// let dice = Math.floor(Math.random() * 6 ) + 1;
+// console.log("Dice value is:",dice);
+
+
+
+// question 5
+// let coin = (Math.floor(Math.random() * 2) + 1)
+// if(coin == 1){
+//     console.log("Tails",coin);
+// }
+// else{
+//     console.log("Heads",coin);
+// }
+
+
+
+// question 6
+
+// let ranNum = Math.floor(Math.random() * 100) + 1;
+// console.log("Random number between 1 and 100 is:",ranNum);
+
+
+
+// question 7
+
+// let userWeight = prompt("Enter your weight in Kilograms:");
+
+// let finalWeight = parseInt(userWeight);
+// console.log(finalWeight,"kilograms");
+
+
+// questioin 8
+
+// let gameNum = Math.floor(Math.random()*10)+1;
+// let guessNum = (prompt("Guess the number between 1 to 10:"));
+// let fla = true
+
+// while(fla){
+//     guessNum = prompt("Guess the number between 1 to 10:");
+//     if(gameNum == guessNum){
+//             fla = false
+//         }
+//     }
+    
+// while(guessNum != gameNum){
+//         guessNum = prompt("Guess the number between 1 to 10:");
+// }
+
+// console.log("Congratuations: you guess it");
+// console.log("the number was:",gameNum);
+
+
+

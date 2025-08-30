@@ -178,3 +178,166 @@
 
 
 
+//! ***********  Chapter 31 to 34   ******************
+
+
+// question 1
+
+let date = new Date();
+// console.log(date);
+
+
+// question 2
+// let monthName = date.toLocaleString('default',{month:"long"});
+// console.log(monthName);
+
+
+// question 3
+// let currentDay = date.toLocaleString('default',{weekday:"long"});
+// console.log(currentDay);
+
+
+// question 4
+// let currentDay = date.toLocaleString('default',{weekday:"long"});
+// console.log(currentDay);
+// if(currentDay == "Sunday" || currentDay == "Saturday"){
+//     console.log("Its Fun Day!");
+// }
+
+
+// question 5
+// let days = date.getDate()
+// console.log(days);
+// if(days < 16){
+//     console.log("First fifften days of the month");
+// }else{
+//     console.log("Last days of the month:");
+// }
+
+
+
+// question 6
+
+// let newDt = new Date()
+// console.log("Current Date:",newDt)
+
+// let miliSec = newDt.getTime();
+// console.log("Mili Seconds since 1 jan 1970:",miliSec);
+
+// let mts = Math.floor(miliSec/(1000 * 6));
+// console.log("Minutes since 1 jan 1970:",mts);
+
+
+
+// question 7
+// let time = date.toLocaleTimeString()
+// console.log(time);
+
+// if(time.includes("AM")){
+//     alert("Its AM now");
+//     console.log("Its AM now");
+// }else{ 
+//     alert("Its PM now");
+//     console.log("Its PM now");
+// }
+
+
+
+// question 8
+
+// let laterDate = new Date("2020","11","31");
+// console.log(laterDate);
+
+
+
+// question 9
+
+// let ramZan = new Date("2015-june-18")
+// console.log(ramZan);
+// let diffMs = date.getTime() - ramZan.getTime();
+// console.log(diffMs);
+
+// let getDays = Math.floor(diffMs / (1000*60*60*24))
+
+// console.log(getDays +" days have passed since 1st Ramadan, 2015");
+
+
+
+// question 10
+// let refDate = new Date();
+// let begDate = new Date("2015","0","1")
+
+// console.log(refDate.getTime());
+// console.log(begDate.getTime());
+
+// let ellaSec = Math.floor(refDate.getTime() - begDate.getTime()/1000);
+// console.log(ellaSec +" Seconds have passed since 1st jan 2015");
+
+
+
+
+
+// question 11
+
+// let curDate = new Date();
+// console.log(curDate.toLocaleTimeString());
+
+// curDate.setHours("1")
+// console.log("before 1 hour the time was",curDate.toLocaleTimeString());
+
+
+
+
+// question 12
+
+// let currDate = new Date();
+// console.log(currDate.getFullYear());
+// console.log("Current Date",currDate);
+
+// currDate.setFullYear(currDate.getFullYear() - 100);
+// console.log("Before 100 years",currDate);
+
+
+
+
+// question 13
+
+// let userAge = Number(prompt("Enter your age:"))
+// console.log("Your age is:",userAge);
+
+// let dob = new Date();
+// let nowYear = dob.getFullYear();
+
+// dob.setFullYear(nowYear - userAge)
+// console.log("Your Date of Birth is:",dob.getFullYear());
+
+
+
+
+
+
+// question 14
+
+let cusName = "Abc customer";
+let numofUnits = 410;
+let chgperUnit = 16;
+let latePayment = 350;
+
+let amoPayable = (numofUnits * chgperUnit).toFixed(2)
+console.log(amoPayable);
+
+let afterLatePayment = (parseFloat(amoPayable) + latePayment).toFixed(2);
+console.log(afterLatePayment);
+
+let curMonth = new Date().toLocaleString('default',{month:"long"});
+console.log(curMonth);
+document.write("<h1>K-Electric Bill</h1>");
+document.write("<b>Customer Name: </b>" + cusName + "<br>");
+document.write("<b>Month: </b>" + curMonth + "<br>");
+document.write("<b>Number of units: </b>" + numofUnits + "<br>");
+document.write("<b>Charges per unit: </b>" + chgperUnit + "<br><br>");
+
+document.write("<b>Net Amount Payable (within Due Date): </b>" + amoPayable + "<br>");
+document.write("<b>Late Payment Surcharge: </b>" + latePayment + "<br>");
+document.write("<b>Gross Amount Payable (after Due Date): </b>" + afterLatePayment + "<br>");
+

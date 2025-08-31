@@ -168,7 +168,7 @@
 //             fla = false
 //         }
 //     }
-    
+
 // while(guessNum != gameNum){
 //         guessNum = prompt("Guess the number between 1 to 10:");
 // }
@@ -318,26 +318,241 @@ let date = new Date();
 
 // question 14
 
-let cusName = "Abc customer";
-let numofUnits = 410;
-let chgperUnit = 16;
-let latePayment = 350;
+// let cusName = "Abc customer";
+// let numofUnits = 410;
+// let chgperUnit = 16;
+// let latePayment = 350;
 
-let amoPayable = (numofUnits * chgperUnit).toFixed(2)
-console.log(amoPayable);
+// let amoPayable = (numofUnits * chgperUnit).toFixed(2)
+// console.log(amoPayable);
 
-let afterLatePayment = (parseFloat(amoPayable) + latePayment).toFixed(2);
-console.log(afterLatePayment);
+// let afterLatePayment = (parseFloat(amoPayable) + latePayment).toFixed(2);
+// console.log(afterLatePayment);
 
-let curMonth = new Date().toLocaleString('default',{month:"long"});
-console.log(curMonth);
-document.write("<h1>K-Electric Bill</h1>");
-document.write("<b>Customer Name: </b>" + cusName + "<br>");
-document.write("<b>Month: </b>" + curMonth + "<br>");
-document.write("<b>Number of units: </b>" + numofUnits + "<br>");
-document.write("<b>Charges per unit: </b>" + chgperUnit + "<br><br>");
+// let curMonth = new Date().toLocaleString('default',{month:"long"});
+// console.log(curMonth);
+// document.write("<h1>K-Electric Bill</h1>");
+// document.write("<b>Customer Name: </b>" + cusName + "<br>");
+// document.write("<b>Month: </b>" + curMonth + "<br>");
+// document.write("<b>Number of units: </b>" + numofUnits + "<br>");
+// document.write("<b>Charges per unit: </b>" + chgperUnit + "<br><br>");
 
-document.write("<b>Net Amount Payable (within Due Date): </b>" + amoPayable + "<br>");
-document.write("<b>Late Payment Surcharge: </b>" + latePayment + "<br>");
-document.write("<b>Gross Amount Payable (after Due Date): </b>" + afterLatePayment + "<br>");
+// document.write("<b>Net Amount Payable (within Due Date): </b>" + amoPayable + "<br>");
+// document.write("<b>Late Payment Surcharge: </b>" + latePayment + "<br>");
+// document.write("<b>Gross Amount Payable (after Due Date): </b>" + afterLatePayment + "<br>");
 
+
+
+
+
+
+
+//! ***********  Chapter 35 to 38   ******************
+
+
+//      question 1
+
+// function myFunction(){
+//     let date = new Date()
+//     return date
+// }
+
+// document.write(myFunction());
+
+
+
+
+
+
+//       question 2
+
+// let firstName = prompt("Enter your First name:")
+// let lastName = prompt("Enter your Last name:")
+
+
+// function greetUser(a,b){
+//     return `Welcome ${a} ${b}`
+// }
+// document.write(greetUser(firstName,lastName))
+
+
+
+
+// question 3
+
+// let num1 = prompt("Enter first number:")
+// let num2 = prompt("Enter second number:")
+
+// function addNumbers(num1,num2){
+//     return  `sum is ${num1 + num2}`
+// }
+// document.write(addNumbers(+num1,Number(num2)))
+
+
+
+
+//         question 4
+
+// let num1 = 10;
+// let num2 = 5;
+// let operator = "-"; // * + - / % 
+
+// function myCalc(n1, n2, op) {
+//     if (op == "*") {
+//         console.log(`${n1} X ${n2} = ${n1 * n2}`);
+//     } else if (op == "+") {
+//         console.log(`${n1} + ${n2} = ${n1 + n2}`);
+//     } else if (op == "-") {
+//         console.log(`${n1} - ${n2} = ${n1 - n2}`);
+//     } else if (op == "/") {
+//         console.log(`${n1} / ${n2} = ${n1 / n2}`);
+//     } else if (op == "%") {
+//         console.log(`${n1} % ${n2} = ${n1 % n2}`);
+//     } else {
+//         alert("Wrong operator:")
+//     }
+// }
+// myCalc(Number(num1), Number(num2), operator);
+
+
+
+
+
+//      question 5
+
+// let num = 3;
+// function sqofNum(n){
+    // return `Square of ${n} is ${Math.pow(n,2)}`
+    // return `Square of ${n} is ${(n*n)}`
+    // return `Square of ${n} is ${(n**2)}`
+// }
+
+// console.log(sqofNum(num));
+
+
+
+
+//          question 6
+
+// let num = Number(prompt("Enter number to find its factorial:"));
+
+// function factofNum(n){
+//     let finalResult = 1;
+//     for(let i=n;i>=1;i--){
+        // console.log(i);
+//         finalResult *= i;
+        // finalResult = finalResult * i;
+//     }
+//     return finalResult;
+// }
+
+// console.log(factofNum(num));;
+
+
+
+
+
+
+//          question 7
+
+// let start = Number(prompt("Enter starting number:"))
+// let end = Number(prompt("Enter Ending number:"))
+
+// function countLimit(s,e){
+//     for(let i=start; i<=end; i++){
+//         console.log("Count",i);
+//     }
+// }
+
+// countLimit(start,end);
+
+
+
+
+
+
+//       question 8
+
+
+// let base = Number(prompt("Enter base of traingle:"))
+// let prep = Number(prompt("Enter prependicular of traingle:"))
+
+// function hypotenuse(b,p){
+
+//     function square(x){
+//         return x*x
+//     }
+
+//     return Math.sqrt(square(b) + square(p));
+// }
+
+// console.log(hypotenuse(base,prep));
+
+
+
+
+
+
+//      question 9
+
+
+// let width = 23.56;
+// let height = 103;
+
+// function areaOfRectangle(w,h){
+//     return `Area of Traingle is:${w*h}`
+// }
+
+// console.log(areaOfRecta/ngle(width,height)); //? argument as variable
+// console.log(areaOfRectangle(44,80));    //? argument as value
+
+
+
+
+
+//         question 10
+
+
+// let userWord = prompt("Enter word to check if its palindrome or not:")
+
+// function palindrome(wrd,len){
+
+//     let reverseWord = "";
+
+//     for(let i=len-1; i>=0; i--){
+//         // console.log(wrd[i]);
+//         reverseWord += wrd[i];
+//     }
+//     // console.log(reverseWord);
+
+//     if(wrd == reverseWord){
+//         console.log(`${wrd} is a palindrome word`);
+//         console.log(`${wrd} = ${reverseWord}`);
+//     }else{
+//         console.log(`${wrd} is NOT a palindrome word`);
+//         console.log(`${wrd} != ${reverseWord}`);
+//     }
+
+// }   
+// palindrome(userWord,userWord.length);
+
+
+
+
+
+//      question 11
+
+// let str = prompt("Enter some text");
+
+// function capitalize(w){
+//     let newWord = w.split(" ");
+//     let finalWord = "";
+//     // console.log(newWord);
+//     for(let i=0; i<=newWord.length-1; i++){
+//         console.log(newWord[i]);
+//         finalWord += `${newWord[i].charAt(0).toUpperCase() + newWord[i].slice(1)} `;
+//     }
+//     console.log(finalWord);
+// }
+
+// capitalize(str)

@@ -422,9 +422,9 @@ let date = new Date();
 
 // let num = 3;
 // function sqofNum(n){
-    // return `Square of ${n} is ${Math.pow(n,2)}`
-    // return `Square of ${n} is ${(n*n)}`
-    // return `Square of ${n} is ${(n**2)}`
+// return `Square of ${n} is ${Math.pow(n,2)}`
+// return `Square of ${n} is ${(n*n)}`
+// return `Square of ${n} is ${(n**2)}`
 // }
 
 // console.log(sqofNum(num));
@@ -439,9 +439,9 @@ let date = new Date();
 // function factofNum(n){
 //     let finalResult = 1;
 //     for(let i=n;i>=1;i--){
-        // console.log(i);
+// console.log(i);
 //         finalResult *= i;
-        // finalResult = finalResult * i;
+// finalResult = finalResult * i;
 //     }
 //     return finalResult;
 // }
@@ -556,3 +556,81 @@ let date = new Date();
 // }
 
 // capitalize(str)
+
+
+
+
+
+//             question 12
+
+// let usrInp = prompt("Enter some sentence:")
+
+
+// function findLongWord(wrds) {
+
+//         let wrdsArray = wrds.split(" ");
+//         let checkWord = wrdsArray[0].length;
+//         let longWord = wrdsArray[0];
+
+//         for (let i = 0; i <= wrdsArray.length - 1; i++) {
+//                 console.log(wrdsArray[i], "==>", wrdsArray[i].length);
+//                 if (wrdsArray[i].length > checkWord) {
+//                         longWord = wrdsArray[i];
+//                 }
+
+//         }
+
+//         console.log("the longest Word is->", longWord);
+
+// }
+
+// findLongWord(usrInp);
+
+
+
+
+//      question 13
+
+// let str = "web development course";
+// let letter = "e";
+
+// function checkSimilar(s,l){
+//         let newStr = s.replaceAll(" ","")
+//         // console.log(newStr);
+
+//         let count = 0;
+
+//         for(let i=0; i<=newStr.length-1; i++){
+//                 // console.log(newStr[i]);
+//                 if(newStr[i] == l){
+//                         count++;
+//                 }
+//         }
+//         console.log(`The total occurance of letter ${l} in ${s} is: ${count}`);
+
+// }
+
+// checkSimilar(str,letter);
+
+
+
+
+
+// question 14
+
+
+// function calcCircumferance(r){
+//         const piVal = 3.142;
+
+//         return `the circumfernece is: ${2*piVal*r}`
+// }
+// console.log(calcCircumferance(3));
+
+
+// function calcArea(r){
+//         const pi = 3.142
+//               // or 
+//         // const pi = Math.PI
+//         return `The Area is ${pi*(r**2)}`
+// }
+// console.log(calcArea(4));
